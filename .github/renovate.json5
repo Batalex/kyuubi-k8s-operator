@@ -11,7 +11,7 @@
     "schedule": ["* 1-6 1-7 * 5"]
   },
   "ignoreDeps": ["ubuntu"],
-  "baseBranchPatterns": ["/^3\\..*\\/edge$/"],
+  "baseBranchPatterns": ["/^[0-9]+\\.[0-9]+\\/edge$/"],
   "customManagers": [
     {
       "customType": "regex",
