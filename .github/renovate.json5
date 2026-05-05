@@ -19,7 +19,8 @@
       "matchStrings": [
         "#\\s*oci-tag=(?<currentValue>[^\\s]+)\\r?\\n\\s*upstream-source:\\s*(?<depName>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]+)"
       ],
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     },
     {
       "customType": "regex",
@@ -27,7 +28,8 @@
       "matchStrings": [
         "(?<variableName>JOB_OCI_IMAGE|GPU_JOB_OCI_IMAGE)\\s*=\\s*\"(?<depName>[^:\\s]+):(?<currentValue>[^@\\s]+)@(?<currentDigest>sha256:[a-f0-9]+)\""
       ],
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "versioningTemplate": "docker"
     }
   ],
   "packageRules": [
@@ -39,7 +41,6 @@
         "ghcr.io/canonical/charmed-spark-kyuubi"
       ],
       "pinDigests": true,
-      "versioning": "docker",
       "groupName": "OCI resources",
       "description": "Only allow digest updates for the current track. Block all version bumps.",
       "matchUpdateTypes": ["major", "minor", "patch"],
@@ -52,6 +53,9 @@
         "ghcr.io/canonical/charmed-spark-gpu",
         "ghcr.io/canonical/charmed-spark-kyuubi"
       ],
+      "pinDigests": true,
+      "groupName": "OCI resources",
+      "description": "Only allow digest updates for the current track. Block all version bumps.",
       "matchUpdateTypes": ["digest"],
       "enabled": true
     }
