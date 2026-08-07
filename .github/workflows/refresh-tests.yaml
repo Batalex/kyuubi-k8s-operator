@@ -34,7 +34,7 @@ jobs:
           df --human-readable
 
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Setup operator environment
         # TODO: Replace with custom image on self-hosted runner
